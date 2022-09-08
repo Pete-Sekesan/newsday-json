@@ -16,7 +16,7 @@ function displayResults(results) {
     $(`#list`).append(
       `<li class="results"><h2>${res.title}</h2>
         <p>${res.authors[0].name}</p>
-        <p>${Math.max(res.date_published, res.date_modified)}</p > 
+        <p>${res.date_published} ${res.date_modified}</p > 
         ${res.content_html}} </li>`
     )
   );
