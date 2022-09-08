@@ -12,11 +12,13 @@ function getDeptList() {
 }
 
 function displayResults(results) {
-  results.items.forEach((res) =>
-    $(`#table`).append(
-      `<table class="results"> <tr> <th>Code</th> <th>Title</th> </tr> <td>${res.title}</td> <td>${res.title}</td> </table>`
-    )
-  );
+  results.items
+    .slice(0, 2)
+    .forEach((res) =>
+      $(`#list`).append(
+        `<li class="results"><h2>${res.title}</h2> <p>${res.date_published}</p>${res.content_html}</li>`
+      )
+    );
 }
 
 function initiateSearch() {
