@@ -12,14 +12,20 @@ function getDeptList() {
 }
 
 function displayResults(results) {
-  results.items.slice(0, 2).forEach((res) =>
+  results.items.slice(0, 2).forEach((res) => {
+    let recent =
+      res.date_published > res.date_modified
+        ? res.date_published
+        : res.date_modified;
+    console.log(recent);
+
     $(`#list`).append(
       `<li class="results"><h2>${res.title}</h2>
         <p>${res.authors[0].name}</p>
-        <p>${res.date_published} ${res.date_modified}</p > 
+        <p>${recent}</p > 
         ${res.content_html}} </li>`
-    )
-  );
+    );
+  });
 }
 
 function initiateSearch() {
