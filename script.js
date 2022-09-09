@@ -12,6 +12,7 @@ function getArticleList() {
 }
 
 function displayResults(results) {
+  $('#list').empty();
   results.items.slice(0, 2).forEach((res) => {
     let recent =
       res.date_published > res.date_modified
