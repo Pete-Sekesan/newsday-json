@@ -1,4 +1,4 @@
-function getDeptList() {
+function getArticleList() {
   const url = 'https://daringfireball.net/feeds/json';
 
   fetch(url)
@@ -31,7 +31,7 @@ function displayResults(results) {
 function initiateSearch() {
   $('form').submit((event) => {
     event.preventDefault();
-    getDeptList();
+    getArticleList();
   });
 }
 $(initiateSearch);
